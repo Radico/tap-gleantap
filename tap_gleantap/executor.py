@@ -38,7 +38,7 @@ class GleanExecutor(TapExecutor):
         self.call_stream(stream, request_config)
 
     def call_stream(self, stream, request_config):
-        offset = 0
+        offset = 100000
         while request_config['run']:
             text = self.build_body(1000, offset)
             res = self.client.make_request(request_config, body=text, method='POST')
